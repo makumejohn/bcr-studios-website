@@ -1,0 +1,92 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #080d16;
+  color: #f1f5f9;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  padding: 20px 6%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #263449;
+}
+
+.logo {
+  font-size: 21px;
+  font-weight: 800;
+  color: #7dd3fc;
+}
+
+a {
+  color: #7dd3fc;
+  text-decoration: none;
+}
+
+.hero {
+  padding: 65px 6%;
+  background: linear-gradient(135deg, #102b45, #080d16);
+}
+
+.hero p {
+  color: #cbd5e1;
+  line-height: 1.7;
+}
+
+h1 {
+  font-size: clamp(38px, 8vw, 66px);
+  margin: 15px 0;
+}
+
+h2 {
+  margin-bottom: 8px;
+}
+
+.tag {
+  color: #7dd3fc;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+main {
+  padding: 28px 6%;
+}
+
+.notice {
+  border: 1px solid #38536c;
+  border-radius: 14px;
+  padding: 18px;
+  margin: 20px 0;
+  color: #cbd5e1;
+}
+
+.tracks {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 14px;
+  margin-top: 22px;
+}
+
+.track {
+  padding: 20px;
+  background: #111c2b;
+  border: 1px solid #27384c;
+  border-radius: 12px;
+}
+
+.track small {
+  color: #7dd3fc;
+}
+
+footer {
+  padding: 25px 6%;
+  border-top: 1px solid #263449;
+  color: #a8b6c8;
+  }
+  
