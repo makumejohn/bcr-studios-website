@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
+ <defs><linearGradient id="a" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#0873b5"/><stop offset=".5" stop-color="#02182d"/><stop offset="1" stop-color="#01050c"/></linearGradient><radialGradient id="b"><stop stop-color="#19cfff" stop-opacity=".72"/><stop offset="1" stop-color="#19cfff" stop-opacity="0"/></radialGradient></defs>
+ <rect width="500" height="500" rx="24" fill="url(#a)"/><circle cx="305" cy="130" r="225" fill="url(#b)"/>
+ <path d="M74 500c13-76 45-114 103-148 24-14 32-38 30-65l-11-39 18-26c-8-26 3-57 23-74 27-24 77-21 98 8 16 22 16 50 11 75l-6 43 30 30 25 196H74Z" fill="#01050b"/>
+ <path d="M173 167c6-34 35-64 70-65 41-2 75 27 80 68l-31-14-22-28-30 33-47 12-20-6Z" fill="#01040a"/>
+ <path d="M0 380 500 275v225H0V380Z" fill="#00101e" opacity=".58"/><text x="250" y="409" text-anchor="middle" font-family="Arial,sans-serif" font-size="52" font-weight="900" fill="#fff" letter-spacing="3">BCR</text><text x="250" y="450" text-anchor="middle" font-family="Arial,sans-serif" font-size="27" fill="#fff" letter-spacing="8">FOREVER</text>
+</svg>

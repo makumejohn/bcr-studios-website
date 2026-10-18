@@ -1,0 +1,8 @@
+--- a/index.html
++++ b/index.html
+@@
+-      <a href="#music">Music</a><a href="#games">Games</a><a href="#animation">Animation</a><a href="#tutorials">Tutorials</a><a class="nav-cta" href="#contact">Contact</a>
++      <a href="#music">Music</a><a href="https://YOUR-BCR-STREAMER-HOST">BCR Streamer</a><a href="#games">Games</a><a href="#animation">Animation</a><a href="#tutorials">Tutorials</a><a class="nav-cta" href="#contact">Contact</a>
+@@
+-        <article class="feature-card music-card" id="music"><div class="card-icon">♫</div><p class="card-number">01 / SOUND</p><h3>Music & Videos</h3><p>Original tracks, music videos, releases and behind-the-scenes creativity.</p><a href="#contact" class="text-link">Explore releases <span>↗</span></a></article>
++        <article class="feature-card music-card" id="music"><div class="card-icon">♫</div><p class="card-number">01 / SOUND</p><h3>Music & Videos</h3><p>Original tracks, music videos, releases and behind-the-scenes creativity.</p><a href="https://YOUR-BCR-STREAMER-HOST" class="text-link">Open BCR Streamer <span>↗</span></a></article>

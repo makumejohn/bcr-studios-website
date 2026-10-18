@@ -1,0 +1,31 @@
+{
+  "name": "bcr-streamer",
+  "version": "0.1.0",
+  "private": true,
+  "description": "BCR Streamer music streaming app with password-protected uploads",
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently -k \"npm:dev:server\" \"npm:dev:client\"",
+    "dev:client": "vite --host 0.0.0.0",
+    "dev:server": "node --watch server/index.js",
+    "build": "vite build",
+    "start": "node server/index.js",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "express": "^5.1.0",
+    "lucide-react": "^0.468.0",
+    "multer": "^2.0.2",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "concurrently": "^9.1.2",
+    "dotenv": "^16.4.7",
+    "vite": "^6.0.7"
+  },
+  "engines": {
+    "node": ">=20.10.0"
+  }
+}

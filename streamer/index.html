@@ -1,65 +1,14 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#080d16">
-<title>BCR Streamer | BCR Studios</title>
-<style>
-*{box-sizing:border-box}
-body{margin:0;background:#080d16;color:#f1f5f9;font-family:Arial,sans-serif}
-header{padding:20px 6%;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #263449}
-.logo{font-size:21px;font-weight:800;color:#7dd3fc}
-a{color:#7dd3fc;text-decoration:none}
-.hero{padding:65px 6%;background:linear-gradient(135deg,#102b45,#080d16)}
-.hero p{color:#cbd5e1;line-height:1.7}
-h1{font-size:clamp(38px,8vw,66px);margin:15px 0}
-h2{margin-bottom:8px}
-.tag{color:#7dd3fc;font-weight:bold;letter-spacing:2px}
-main{padding:28px 6%}
-.notice{border:1px solid #38536c;border-radius:14px;padding:18px;margin:20px 0;color:#cbd5e1}
-.tracks{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px;margin-top:22px}
-.track{padding:20px;background:#111c2b;border:1px solid #27384c;border-radius:12px}
-.track small{color:#7dd3fc}
-footer{padding:25px 6%;border-top:1px solid #263449;color:#a8b6c8}
-</style>
-</head>
-<body>
-<header>
-<div class="logo">BCR STREAMER</div>
-<a href="../">BCR Studios ↗</a>
-</header>
-<section class="hero">
-<div class="tag">A BCR STUDIOS EXPERIENCE</div>
-<h1>Your sound.<br>Your world.</h1>
-<p>Discover original music from BCR Studios.<br>Made for music lovers. Built for the culture.</p>
-</section>
-<main>
-<h2>Welcome to BCR Streamer</h2>
-<p>One home for the music of BCR Studios.</p>
-<div class="notice">
-<strong>Music library coming online soon.</strong>
-<p>Our first collection of original tracks is being prepared for streaming.</p>
-Free access · Online listening · No ads
-</div>
-<h2>Our music collection</h2>
-<div class="tracks" id="tracks"></div>
-</main>
-<footer>© <span id="year"></span> BCR Studios. All rights reserved.</footer>
-<script>
-document.getElementById('year').textContent=new Date().getFullYear();
-const grid=document.getElementById('tracks');
-for(let i=1;i<=25;i++){
-const card=document.createElement('div');
-card.className='track';
-const title=document.createElement('h3');
-title.textContent='BCR Original Track '+String(i).padStart(2,'0');
-const note=document.createElement('small');
-note.textContent='COMING SOON';
-card.append(title,note);
-grid.appendChild(card);
-}
-</script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#030912" />
+    <meta name="description" content="BCR Streamer — your music, your vibe, anytime." />
+    <title>BCR Streamer</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>
