@@ -1,59 +1,227 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#09090f">
-  <meta name="description" content="BCR Studios — music, music videos, video games, animation and online tutorials.">
-  <title>BCR Studios | Create Beyond Reality</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BCR Studios — Professional Desktop</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#f8fafc;color:#0f172a;font-family:Inter,system-ui,sans-serif;line-height:1.6}
+a{color:inherit;text-decoration:none}
+/* TOP BAR */
+.topbar{background:#0f172a;color:#94a3b8;display:flex;justify-content:space-between;align-items:center;padding:8px 5%;font-size:11px;letter-spacing:.5px}
+.topbar b{color:#38bdf8}
+/* NAV */
+nav{background:rgba(255,255,255,.98);backdrop-filter:blur(10px);position:sticky;top:0;z-index:50;border-bottom:1px solid #e2e8f0;padding:14px 5%;display:flex;justify-content:space-between;align-items:center}
+.brand{font-family:Space Grotesk;font-weight:800;font-size:18px;letter-spacing:1px}
+.brand span{color:#0ea5e9}
+.navlinks{display:flex;gap:28px;font-size:13px;font-weight:600;color:#334155}
+.navlinks a.active{color:#0ea5e9;border-bottom:2px solid #0ea5e9;padding-bottom:2px}
+.cta-nav{background:#0f172a;color:white;padding:10px 18px;border-radius:999px;font-size:13px;font-weight:700}
+/* HERO */
+.hero{max-width:1200px;margin:0 auto;padding:40px 5% 30px;display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+.hero-left .eyebrow{font-size:11px;letter-spacing:3px;font-weight:800;color:#0ea5e9}
+.hero-left h1{font-family:Space Grotesk;font-size:52px;font-weight:800;line-height:.95;margin:14px 0;letter-spacing:-1px}
+.hero-left h1 em{font-style:normal;color:#0ea5e9}
+.hero-left p{color:#475569;font-size:15px;max-width:520px;line-height:1.7}
+.hero-stats{display:flex;gap:24px;margin-top:18px;padding-top:18px;border-top:1px solid #e2e8f0}
+.stat b{font-size:22px;display:block;color:#0f172a}
+.stat span{font-size:11px;letter-spacing:1px;color:#64748b;font-weight:600}
+.hero-actions{display:flex;gap:12px;margin-top:20px;flex-wrap:wrap}
+.btn{padding:13px 22px;border-radius:999px;font-weight:700;font-size:13px;display:inline-flex;align-items:center;gap:8px}
+.btn-primary{background:#0ea5e9;color:white;box-shadow:0 8px 20px rgba(14,165,233,.3)}
+.btn-secondary{background:white;border:1px solid #e2e8f0;color:#0f172a}
+.hero-right{background:linear-gradient(135deg,#020a1a 0%,#0a1931 50%,#38bdf8 100%);border-radius:16px;padding:16px;color:white;position:relative;overflow:hidden;min-height:380px;display:flex;flex-direction:column;justify-content:space-between}
+.hero-badge{background:rgba(255,255,255,.15);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.2);color:white;padding:6px 12px;border-radius:999px;font-size:10px;font-weight:700;align-self:flex-start;letter-spacing:1px}
+.hero-card{background:white;color:#0f172a;border-radius:12px;padding:14px;display:flex;gap:12px;align-items:center;box-shadow:0 10px 30px rgba(0,0,0,.2)}
+.hero-card img{width:48px;height:48px;border-radius:8px;object-fit:cover;border:1px solid #e2e8f0}
+/* LOGOS */
+.logobar{background:#0f172a;color:#64748b;padding:14px 5%;display:flex;justify-content:space-between;align-items:center;font-size:11px;letter-spacing:1px;flex-wrap:wrap;gap:10px}
+.logobar b{color:white;font-size:13px}
+/* SECTIONS */
+.section{max-width:1200px;margin:0 auto;padding:40px 5%}
+.eyebrow{font-size:11px;letter-spacing:3px;font-weight:800;color:#0ea5e9}
+.section h2{font-family:Space Grotesk;font-size:30px;font-weight:800;margin:8px 0 8px}
+.section p.lead{color:#475569;max-width:600px;font-size:14px}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:24px}
+.card{background:white;border:1px solid #e2e8f0;border-radius:14px;padding:20px;transition:all .2s}
+.card:hover{border-color:#38bdf8;box-shadow:0 8px 24px rgba(14,165,233,.12);transform:translateY(-2px)}
+.card-icon{width:40px;height:40px;background:#e0f2fe;color:#0284c7;border-radius:10px;display:grid;place-items:center;font-weight:800;margin-bottom:12px}
+.card h4{font-size:14px;margin-bottom:6px}
+.card p{font-size:12px;color:#64748b;line-height:1.6}
+.card a{font-size:12px;color:#0284c7;font-weight:700;margin-top:10px;display:inline-block}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:24px}
+.feature{background:white;border:1px solid #e2e8f0;border-radius:14px;overflow:hidden;display:flex}
+.feature img{width:180px;object-fit:cover}
+.feature-body{padding:18px;flex:1}
+.badge{font-size:10px;font-weight:800;background:#e0f2fe;color:#0284c7;padding:4px 8px;border-radius:999px;letter-spacing:.5px}
+.stats3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:24px}
+.stat-card{background:#0f172a;color:white;border-radius:14px;padding:20px;text-align:center}
+.stat-card b{font-size:26px;color:#38bdf8;display:block}
+.about{background:#0f172a;color:#cbd5e1;border-radius:16px;padding:30px;display:grid;grid-template-columns:1fr 1fr;gap:30px;margin-top:24px}
+.about h3{color:white;font-size:20px;margin-bottom:10px}
+.about li{font-size:13px;margin-bottom:8px;color:#94a3b8}
+.cta{max-width:1200px;margin:20px auto;padding:30px 5%;background:linear-gradient(135deg,#0ea5e9 0%,#0284c7 100%);border-radius:16px;color:white;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+.cta h3{font-size:24px}
+.footer{background:#020617;color:#64748b;padding:30px 5%;margin-top:40px}
+.footer-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1.5fr 1fr 1fr 1.2fr;gap:30px;font-size:12px}
+.footer b{color:white}
+@media(max-width:900px){.hero{grid-template-columns:1fr}.grid4{grid-template-columns:1fr 1fr}.grid2{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr 1fr}}
+</style>
 </head>
 <body>
-  <header class="site-header">
-    <a class="brand" href="#home" aria-label="BCR Studios home"><span class="brand-mark">BCR</span><span>STUDIOS</span></a>
-    <button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false">☰</button>
-    <nav id="nav">
-      <a href="#music">Music</a><a href="#games">Games</a><a href="#animation">Animation</a><a href="#tutorials">Tutorials</a><a class="nav-cta" href="#contact">Contact</a>
-    </nav>
-  </header>
+<div class="topbar"><span>📍 <b>BCR Studios</b> • Ficksburg, ZA • Est. 2024 • Independent Creative Studio</span><span>📞 <b>067-169-4413</b> • ✉️ <b>bcrstudios03@gmail.com</b> • 🎵 <b><a href="https://bcr-streamer.onrender.com" target="_blank" style="color:#38bdf8;text-decoration:underline">bcr-streamer.onrender.com</a></b></span></div>
 
-  <main>
-    <section class="hero" id="home">
-      <div class="hero-glow"></div>
-      <p class="eyebrow"><span class="live-dot"></span> INDEPENDENT CREATIVE STUDIO</p>
-      <h1>CREATE BEYOND<br><span>REALITY.</span></h1>
-      <p class="hero-copy">Music that moves you. Stories that pull you in. Games and animation that bring imagination to life.</p>
-      <div class="hero-actions"><a class="button primary" href="#explore">Explore BCR <span>↗</span></a><a class="button ghost" href="#about">Meet the studio</a></div>
-      <div class="hero-bottom"><span> MUSIC · VISUALS · GAMES · LEARNING</span><span>BUILT FOR THE NEXT WAVE ↓</span></div>
-    </section>
+<nav>
+  <div class="brand">♔ BCR <span>STUDIOS</span></div>
+  <div class="navlinks">
+    <a class="active" href="#">Studio</a>
+    <a href="#">Music</a>
+    <a href="#">Games</a>
+    <a href="#">Services</a>
+    <a href="#">Shop</a>
+    <a href="#">Contact</a>
+  </div>
+  <a class="cta-nav" href="#">Book Session →</a>
+</nav>
 
-    <section class="intro section" id="about">
-      <div><p class="eyebrow">WELCOME TO BCR STUDIOS</p><h2>One studio.<br><span>Unlimited worlds.</span></h2></div>
-      <p class="intro-copy">We bring creative ideas to life through sound, visuals, interactive worlds and knowledge. Explore the work, discover something new, and grow with the BCR community.</p>
-    </section>
-
-    <section class="section work-section" id="explore">
-      <div class="section-heading"><div><p class="eyebrow">WHAT WE DO</p><h2>Explore the universe.</h2></div><p class="muted">Pick your next obsession.</p></div>
-      <div class="feature-grid">
-        <article class="feature-card music-card" id="music"><div class="card-icon">♫</div><p class="card-number">01 / SOUND</p><h3>Music & Videos</h3><p>Original tracks, music videos, releases and behind-the-scenes creativity.</p><a href="#contact" class="text-link">Explore releases <span>↗</span></a></article>
-        <article class="feature-card games-card" id="games"><div class="card-icon">⌘</div><p class="card-number">02 / PLAY</p><h3>Video Games</h3><p>Game concepts, playable experiments and worlds built from imagination.</p><a href="#contact" class="text-link">Discover games <span>↗</span></a></article>
-        <article class="feature-card animation-card" id="animation"><div class="card-icon">✳</div><p class="card-number">03 / MOTION</p><h3>Animation</h3><p>Animated characters, visual stories and worlds that come alive.</p><a href="#contact" class="text-link">Watch animation <span>↗</span></a></article>
-        <article class="feature-card learn-card" id="tutorials"><div class="card-icon">↗</div><p class="card-number">04 / LEVEL UP</p><h3>Online Tutorials</h3><p>Learn creative skills, follow practical guides and build your own projects.</p><a href="#contact" class="text-link">Start learning <span>↗</span></a></article>
+<div class="hero">
+  <div class="hero-left">
+    <div class="eyebrow">CREATE BEYOND REALITY • INDEPENDENT • AWARD-READY</div>
+    <h1>We build <em>worlds</em><br>that move<br>people.</h1>
+    <p>Music, visuals, games and learning — one studio in Ficksburg crafting original work for the next wave. Shop open, studio bookings available.</p>
+    <div class="hero-stats">
+      <div class="stat"><b>35</b><span>TRACKS CATALOGUE</span></div>
+      <div class="stat"><b>∞</b><span>STREAMING NOW</span></div>
+      <div class="stat"><b>500+</b><span>CLIENTS SERVED</span></div>
+    </div>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="https://bcr-streamer.onrender.com" target="_blank">▶ Explore Work</a>
+      <a class="btn btn-secondary" href="#">Meet the Studio</a>
+      <a class="btn btn-secondary" href="https://bcr-streamer.onrender.com" target="_blank">🎵 Stream Songs →</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-badge">● LIVE • BCR Streamer — Free Streaming</div>
+    <div style="margin-top:auto">
+      <h3 style="font-size:22px;font-weight:800;line-height:1;margin-bottom:6px">BCR STREAMER<br><span style="color:#7dd3fc">Your Music • Your Vibe</span></h3>
+      <p style="font-size:12px;opacity:.9">Trap • Hip-Hop • R&B • Amapiano • Afro House</p>
+    </div>
+    <div class="hero-card">
+      <img src="https://picsum.photos/seed/bcr1/100/100" alt="">
+      <div>
+        <strong style="font-size:13px">Told You I Can — R&B</strong><br>
+        <span style="font-size:11px;color:#64748b">BCR Studios • Now streaming for everyone</span>
       </div>
-    </section>
+      <span style="margin-left:auto;background:#0ea5e9;color:white;padding:6px 12px;border-radius:999px;font-size:11px;font-weight:800">▶ Play</span>
+    </div>
+  </div>
+</div>
 
-    <section class="statement">
-      <p class="eyebrow">THE BCR MINDSET</p><h2>Ideas don't have limits.<br><span>Neither should creativity.</span></h2>
-      <p>Independent spirit. Big imagination. Always creating.</p>
-    </section>
+<div class="logobar">
+  <span>AS SEEN ON:</span>
+  <b><a href="https://bcr-streamer.onrender.com" target="_blank" style="color:#38bdf8;text-decoration:underline">bcr-streamer.onrender.com</a></b> <span>•</span> <b>BCR Shop (11 products)</b> <span>•</span> <b>YouTube • Spotify • TikTok</b> <span>•</span> <b>Ficksburg • Free State • Worldwide</b>
+</div>
 
-    <section class="section contact-section" id="contact">
-      <div><p class="eyebrow">LET'S BUILD SOMETHING</p><h2>Got an idea?<br><span>Let's connect.</span></h2><p class="muted">For collaborations, music, games, animation or tutorial requests, reach out.</p></div>
-      <div class="contact-panel"><p>YOUR NEXT PROJECT STARTS HERE.</p><a class="button primary" href="mailto:hello@bcrstudios.example?subject=BCR%20Studios%20Enquiry">Email BCR Studios <span>↗</span></a><small>Before launch, replace this placeholder email with your real contact address.</small></div>
-    </section>
-  </main>
+<div class="section">
+  <div class="eyebrow">WHAT WE DO</div>
+  <h2>One studio. Unlimited worlds.</h2>
+  <p class="lead">From a hook to a game level to a classroom — we turn ideas into work that travels. Pick your obsession.</p>
+  <div class="grid4">
+    <div class="card"><div class="card-icon">♫</div><h4>Music & Videos</h4><p>Original tracks, Streaming, music videos, releases. 35-track catalogue.</p><a href="https://bcr-streamer.onrender.com" target="_blank">Explore releases →</a></div>
+    <div class="card"><div class="card-icon">▶</div><h4>Video Games</h4><p>Game concepts, BCR Adventure, playable experiments, worlds from imagination.</p><a href="#">Discover games →</a></div>
+    <div class="card"><div class="card-icon">✦</div><h4>Animation</h4><p>Animated characters, visual stories, Soweto drama series (10 min).</p><a href="#">Watch animation →</a></div>
+    <div class="card"><div class="card-icon">🎓</div><h4>Studio & Learning</h4><p>Recording, mixing, distribution, music law, classes. Book via WhatsApp.</p><a href="#">Book studio →</a></div>
+  </div>
 
-  <footer><a class="brand" href="#home"><span class="brand-mark">BCR</span><span>STUDIOS</span></a><p>Independent creativity, made with purpose.</p><span class="copyright">© <span id="year"></span> BCR Studios</span></footer>
-  <script src="script.js"></script>
+  <div class="grid2">
+    <div class="feature">
+      <img src="https://picsum.photos/seed/shop1/300/300" alt="">
+      <div class="feature-body">
+        <span class="badge">NEW • SHOP LIVE</span>
+        <h4 style="margin:8px 0 6px">BCR Shop — Music, Games, Studio</h4>
+        <p style="font-size:12px;color:#64748b;line-height:1.6">11 products: 35-track bundle R500, Studio 1h R350, Games R80, Law R500, Classes R250. WhatsApp checkout.</p>
+        <a href="https://bcr-streamer.onrender.com" target="_blank" style="color:#0ea5e9;font-weight:700;font-size:12px">Visit Shop →</a>
+      </div>
+    </div>
+    <div class="feature">
+      <img src="https://picsum.photos/seed/drama1/300/300" alt="">
+      <div class="feature-body">
+        <span class="badge">SERIES • SOWETO DRAMA</span>
+        <h4 style="margin:8px 0 6px">The Note She Never Sent — 10 min</h4>
+        <p style="font-size:12px;color:#64748b;line-height:1.6">Naledi vs. stolen lullaby, father twist at Orlando Towers. Part 2: The Label Comes Knocking.</p>
+        <a href="#" style="color:#0ea5e9;font-weight:700;font-size:12px">Watch drama →</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="stats3">
+    <div class="stat-card"><b>∞</b><span style="font-size:11px;letter-spacing:1px">STREAMING NOW</span><div style="font-size:11px;color:#94a3b8;margin-top:6px">Free • No ads • bcr-streamer.onrender.com</div></div>
+    <div class="stat-card"><b>11</b><span style="font-size:11px;letter-spacing:1px">SHOP PRODUCTS LIVE</span><div style="font-size:11px;color:#94a3b8;margin-top:6px">Music • Games • Studio • Law • Classes</div></div>
+    <div class="stat-card"><b>067</b><span style="font-size:11px;letter-spacing:1px">WHATSAPP BOOKINGS</span><div style="font-size:11px;color:#94a3b8;margin-top:6px">067-169-4413 • Same-day reply</div></div>
+  </div>
+
+  <div class="about">
+    <div>
+      <h3>The BCR Mindset</h3>
+      <p style="font-size:13px;color:#94a3b8;line-height:1.7">Independent spirit. Big imagination. Always creating. From Vilakazi Street to the world — we keep 100% of our masters, teach others to do the same, and build for the next wave.</p>
+      <ul style="margin-top:14px;list-style:none">
+        <li>✓ Royalties stay with artists</li>
+        <li>✓ Distribution to 150+ stores (R150/single)</li>
+        <li>✓ Music law clinic for Soweto artists</li>
+      </ul>
+    </div>
+    <div>
+      <h3 style="font-size:16px">Why BCR?</h3>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px">
+        <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:14px"><b style="color:white">Ficksburg • Free State roots</b><br><span style="font-size:11px">Vilakazi, Orlando Towers, real stories</span></div>
+        <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:14px"><b style="color:white">Full universe</b><br><span style="font-size:11px">Sound • Visuals • Games • Learning</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="cta">
+  <div>
+    <h3>Got an idea? Let's connect.</h3>
+    <p style="font-size:13px;opacity:.9">For collaborations, music, games, animation or tutorial requests, reach out.</p>
+  </div>
+  <div style="display:flex;gap:12px;flex-wrap:wrap">
+    <a href="https://wa.me/27671694413" style="background:white;color:#0ea5e9;padding:12px 20px;border-radius:999px;font-weight:800;font-size:13px">WhatsApp 067-169-4413</a>
+    <a href="mailto:bcrstudios03@gmail.com" style="border:1px solid white;color:white;padding:12px 20px;border-radius:999px;font-weight:700;font-size:13px">bcrstudios03@gmail.com</a>
+  </div>
+</div>
+
+<div class="footer">
+  <div class="footer-grid">
+    <div>
+      <div style="font-weight:800;color:white;letter-spacing:1px">♔ BCR STUDIOS</div>
+      <div style="margin-top:8px;line-height:1.7">Create Beyond Reality.<br>Music that moves you. Stories that pull you in.<br>Ficksburg • Free State • Worldwide</div>
+    </div>
+    <div>
+      <b>Explore</b><br>
+      <a href="#">Music & Videos</a><br>
+      <a href="#">Video Games</a><br>
+      <a href="#">Animation</a><br>
+      <a href="#">Tutorials</a>
+    </div>
+    <div>
+      <b>Stream & Shop</b><br>
+      <a href="#">BCR Streamer</a><br>
+      <a href="#">BCR Shop (11 products)</a><br>
+      <a href="#">Studio Bookings</a><br>
+      <a href="#">Music Law Clinic</a>
+    </div>
+    <div>
+      <b>Contact</b><br>
+      WhatsApp: 067-169-4413<br>
+      bcrstudios03@gmail.com<br>
+      bcr-streamer.onrender.com<br>
+      <span style="font-size:11px">Sky Blue & Silver • Est. 2024</span>
+    </div>
+  </div>
+  <div style="text-align:center;margin-top:20px;padding-top:16px;border-top:1px solid #1e293b;font-size:11px">© 2026 BCR Studios — Ficksburg, ZA • Independent • Built for the next wave</div>
+</div>
 </body>
 </html>
